@@ -127,3 +127,14 @@ void send_color(uint8_t r, uint8_t g, uint8_t b, enum Device device)
   send_value(r, device);
   send_value(b, device);
 }
+
+// Port from backlight_set_state
+void indicator_leds_set(bool leds[8]) {
+  uint8_t led_cnt;
+
+  cli();
+  for(led_cnt = 0; led_cnt < 8; led_cnt++)
+    send_value(leds[led_cnt] ? 255 : 0);
+  sei();
+  show();
+}
