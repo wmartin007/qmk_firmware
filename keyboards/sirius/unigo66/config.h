@@ -33,7 +33,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* matrix scanning is done in custom_matrix.cpp */
 //#define DIODE_DIRECTION
-
+#undef  TAPPING_TERM
+#define TAPPING_TERM             200
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
